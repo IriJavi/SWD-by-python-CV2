@@ -7,6 +7,6 @@ if not exist "%PY%" set PY=python
 "%PY%" -m pip install -r requirements.txt
 "%PY%" -m PyInstaller --noconfirm --clean --onefile --windowed --name MSPe-QA ^
     --exclude-module matplotlib --exclude-module pandas --exclude-module PyQt5 --exclude-module PyQt6 ^
-    gui_contour.py
+    contour_gui.py
 
 echo Listo: %~dp0dist\MSPe-QA.exe

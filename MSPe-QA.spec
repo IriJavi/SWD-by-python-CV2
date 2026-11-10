@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['gui_contour.py'],
+    ['contour_gui.py'],
     pathex=[],
     binaries=[],
     datas=[],

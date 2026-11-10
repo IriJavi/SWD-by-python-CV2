@@ -1,10 +1,10 @@
 """
 Medicion de la anchura del cordon (forma de "J") en tres puntos: parte superior, curva y punta inferior.
 
-Modulo independiente de demo_contour.py (que solo calcula el area); solo reutiliza su deteccion de contorno.
+Modulo independiente de contour_imgpr.py (que solo calcula el area); solo reutiliza su deteccion de contorno.
 
 Metodo (analisis de la FORMA, no del contorno suelto):
-  1. Mascara rellena del cordon (contorno de demo_contour) y suavizado ligero (cierre) para quitar muescas.
+  1. Mascara rellena del cordon (contorno de contour_imgpr) y suavizado ligero (cierre) para quitar muescas.
   2. Eje central (esqueleto) y recorrido mas largo entre sus dos extremos -> linea media ordenada del cordon.
   3. Tres estaciones sobre la linea media: parte superior, punto de maxima curvatura (la curva) y punta.
   4. En cada estacion se traza la NORMAL a la linea media a ambos lados hasta salir de la mascara; la distancia
@@ -20,7 +20,7 @@ import numpy as np
 from scipy.ndimage import gaussian_filter1d
 from skimage.morphology import skeletonize
 
-import demo_contour as dc
+import contour_imgpr as dc
 import scale
 
 PARAMS = dict(
